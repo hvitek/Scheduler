@@ -12,7 +12,7 @@ namespace Scheduler
     {
         public void execute()
         {
-            string methodName = "ExecuteSomething";
+            string methodName = "ExecuteSomething4";
 
             //Get the method information using the method info class
             MethodInfo mi = this.GetType().GetMethod(methodName);
@@ -22,8 +22,22 @@ namespace Scheduler
             // or you can pass the array of parameters...)
 
             int numOfArgs = mi.GetParameters().Count();
+
             Object[] args = new Object[numOfArgs];
-            args[0] = "asdasd";
+
+            if (numOfArgs != 0)
+            {
+                for (int i = 0; i < numOfArgs; i++)
+                {
+                    args[i] = null;
+                    // args[i] = getArgument(i);
+                }
+            }
+            else
+                args = null;
+
+
+
             mi.Invoke(this, args);
 
         }
@@ -51,12 +65,12 @@ namespace Scheduler
             
         }
 
-        public void ExecuteSomething1(string param1, int param2)
+        public void ExecuteSomething1(string param1, string param2)
         {
             int a = 55;
         }
 
-        public void ExecuteSomething2(string param1, int param2)
+        public void ExecuteSomething2(string param1, string param2)
         {
             int a = 55;
         }
