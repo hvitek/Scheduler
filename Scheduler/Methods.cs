@@ -13,14 +13,9 @@ namespace Scheduler
         public void execute()
         {
             string methodName = "ExecuteSomething4";
-
-            //Get the method information using the method info class
+            
             MethodInfo mi = this.GetType().GetMethod(methodName);
-
-            //Invoke the method
-            // (null- no parameter for the method call
-            // or you can pass the array of parameters...)
-
+            
             int numOfArgs = mi.GetParameters().Count();
 
             Object[] args = new Object[numOfArgs];

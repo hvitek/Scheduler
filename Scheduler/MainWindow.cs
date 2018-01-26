@@ -20,15 +20,17 @@ namespace Scheduler
             makeConstructors();
             inicializeMethods();
         }
-        Console console;
-        Methods methods;
-        public List<Method> methodList;
+        public Console console;
+        public Methods methods;
+        public List<MethodModel> methodList;
+        public FileReader defFileReader;
 
         public void makeConstructors()
         {
             console = new Console(this);
             methods = new Methods();
-            methodList = new List<Method>();
+            methodList = new List<MethodModel>();
+            
         }
 
         private void inicializeMethods()
@@ -38,7 +40,7 @@ namespace Scheduler
             {
                 listBoxDefFiles.Items.Add("Name: "+methodInfo.Name + " Type: " +methodInfo.ReturnType);
 
-                Method method = new Method();
+                MethodModel method = new MethodModel();
                 method.methodName = methodInfo.Name;
                 method.methodReturnType = methodInfo.ReturnType;
                 method.methodReturnTypeCustomAttributes = methodInfo.ReturnTypeCustomAttributes;
@@ -49,14 +51,17 @@ namespace Scheduler
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
-            Methods methods = new Methods();
-            methods.execute();
-
+            console.ConsoleInfo("*********************************************************************** start ***********************************************************************");
+            defFileReader = new FileReader(this);
+            //
+            DefFileReader fr = new DefFileReader();
+            //Methods methods = new Methods();
+            //methods.execute();
         }
 
         private void buttonStop_Click(object sender, EventArgs e)
         {
-            console.ConsoleWarning("stop");
+            console.ConsoleInfo("*********************************************************************** stop ***********************************************************************");
         }
     }
 }

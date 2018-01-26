@@ -47,14 +47,16 @@
   <ItemGroup>
     <Compile Include="Console.cs" />
     <Compile Include="ConsoleUtils.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="DefFileReader.cs" />
+    <Compile Include="FileReader.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Method.cs" />
-    <Compile Include="MethodParams.cs" />
+    <Compile Include="MethodModel.cs" />
     <Compile Include="Methods.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

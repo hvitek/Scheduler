@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Scheduler
 {
-    class Console
+    public class Console
     {
         MainWindow main;
         public Console(MainWindow mainWindow)
@@ -31,6 +31,17 @@ namespace Scheduler
         /// </summary>
         /// <param name="text">Text to write</param>
         public void ConsoleInfo(string text)
+        {
+            Color color = Color.ForestGreen;
+            ConsoleUtils.AppendText(main.richTextBoxState, text, color);
+        }
+
+
+        /// <summary>
+        /// Write line to console.
+        /// </summary>
+        /// <param name="text">Text to write</param>
+        public void ConsoleNormal(string text)
         {
             Color color = Color.Black;
             ConsoleUtils.AppendText(main.richTextBoxState, text, color);
